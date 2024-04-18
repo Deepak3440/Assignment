@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Add, ArrowForward } from '@mui/icons-material';
+import { Add, Remove, ArrowForward, ExpandMore, ExpandLess } from '@mui/icons-material';
 import './Workorder.css';
 
 function Table() {
@@ -67,6 +67,7 @@ function Table() {
     },
   ]);
 
+
   const handleRowClick = (index) => {
     const updatedTableData = [...tableData];
     updatedTableData[index].expanded = !updatedTableData[index].expanded;
@@ -79,7 +80,7 @@ function Table() {
     setTableData(updatedTableData);
   };
 
- const handleDataCheckboxChange = (packageIndex, itemIndex, dataIndex) => {
+  const handleDataCheckboxChange = (packageIndex, itemIndex, dataIndex) => {
     const updatedTableData = [...tableData];
     updatedTableData[packageIndex].content[itemIndex].data[dataIndex].selected = !updatedTableData[packageIndex].content[itemIndex].data[dataIndex].selected;
   
@@ -121,6 +122,7 @@ function Table() {
     setTableData(updatedTableData);
   };
   
+
   const handleButtonClick = (show) => {
     setShowTable(show);
   };
@@ -167,7 +169,9 @@ function Table() {
                     <td>{row.package}</td>
                     <td>{row.rate}</td>
                     <td>{row.total}</td>
-                    <td><Add /></td>
+                    <td>{row.expanded ? <Remove style={{ fontSize: '24px' }} className='icon' /> : <Add style={{ fontSize: '24px' }} />}</td>
+
+
                   </tr>
                   {row.expanded && row.content.map((item, itemIndex) => (
                     <React.Fragment key={`${index}-${itemIndex}`}>
@@ -185,7 +189,7 @@ function Table() {
                         <td>{item.item}</td>
                         <td>{item.total}</td>
                         <td></td>
-                       <td></td>
+                        <td>{item.expanded ? <ExpandLess /> : <ExpandMore />}</td>
                       </tr>
                       {item.expanded && item.data.map((data, dataIndex) => (
                         <tr key={`${index}-${itemIndex}-${dataIndex}`} className="nested-data-row">
