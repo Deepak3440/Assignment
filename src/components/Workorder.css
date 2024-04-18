@@ -95,4 +95,7 @@
   .left {
     float: left;
   }
+.centered-content h2 {
+    margin-right: 280px; 
+  }
   
