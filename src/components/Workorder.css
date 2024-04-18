@@ -1,0 +1,98 @@
+.table-container {
+    margin: 20px;
+    position: relative;
+  }
+  
+  .toggle-buttons {
+    margin-top: 80px;
+    margin-bottom: 20px;
+    float: left;
+  }
+  
+  .toggle-buttons button {
+    margin-right: 20px; 
+    text-decoration: underline; 
+    cursor: pointer; 
+    border: none; 
+    background: none; 
+    padding: 0;
+    font-size: 20px;
+  }
+  
+  .toggle-buttons button:hover {
+    color: blue; 
+  }
+  
+  .table-content {
+    display: block;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    border: none; 
+  }
+  
+  th,
+  td {
+    
+    text-align: left;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: azure;
+  }
+  
+  .active {
+    background-color: #f0f0f0;
+  }
+  
+  .nested-row td {
+    padding-left: 20px;
+  }
+  
+  .nested-data-row td:first-child {
+    padding-left: 40px;
+  }
+  
+  .centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; 
+  }
+  
+  .save-button {
+    position: absolute; 
+    top: 0;
+    right: 0; 
+    padding: 10px 20px; 
+    background-color: #007bff; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+  }
+  
+  .save-button:hover {
+    background-color: #0056b3; 
+  }
+  
+  .primary {
+    margin-left: 100px;
+  }
+  
+  .toggle-buttons hr {
+    margin: 10px 0;
+  }
+  
+  .toggle-buttons hr {
+    border: none;
+    border-top: 1px solid #ccc; 
+  }
+  
+  .left {
+    float: left;
+  }
+  
