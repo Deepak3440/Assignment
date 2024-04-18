@@ -7,16 +7,16 @@ function Table() {
   const [tableData, setTableData] = useState([
     {
       package: 'Civil 1',
-      rate: '$100',
-      total: '$500',
+      rate: '100',
+      total: '₹500',
       content: [
         {
           item: 'Activity 1',
-          total: '$100', 
+          total: '₹82782880', 
           data: [
-            { name: 'WorkItem 1', selected: false, total: '$50' }, 
-            { name: 'Data 2', selected: false, total: '$30' }, 
-            { name: 'Data 3', selected: false, total: '$20' }, 
+            { name: 'WorkItem 1', selected: false, total: '₹28299150' }, 
+            { name: 'Data 2', selected: false, total: '₹733830' }, 
+            { name: 'Data 3', selected: false, total: '₹7288820' }, 
           ],
           expanded: false,
           selected: false
@@ -27,16 +27,16 @@ function Table() {
     },
     {
       package: 'Civil 2',
-      rate: '$200',
-      total: '$1000', 
+      rate: '200',
+      total: '₹1226728298', 
       content: [
         {
           item: 'Activity 2',
-          total: '$200', 
+          total: '₹7833773', 
           data: [
-            { name: 'WorkItem 4', selected: false, total: '$100' }, 
-            { name: 'Data 5', selected: false, total: '$60' }, 
-            { name: 'Data 6', selected: false, total: '$40' }, 
+            { name: 'WorkItem 4', selected: false, total: '₹1088380' }, 
+            { name: 'Data 5', selected: false, total: '₹6271770' }, 
+            { name: 'Data 6', selected: false, total: '₹42727280' }, 
           ],
           expanded: false,
           selected: false
@@ -47,16 +47,16 @@ function Table() {
     },
     {
       package: 'Civil 3',
-      rate: '$300',
-      total: '$1500',
+      rate: '300',
+      total: '₹1500000',
       content: [
         {
           item: 'Activity 3',
-          total: '$300', 
+          total: '₹300', 
           data: [
-            { name: 'WorkItem 7', selected: false, total: '$150' }, 
-            { name: 'Data 8', selected: false, total: '$90' }, 
-            { name: 'Data 9', selected: false, total: '$60' }, 
+            { name: 'WorkItem 7', selected: false, total: '₹177350' }, 
+            { name: 'Data 8', selected: false, total: '₹7377390' }, 
+            { name: 'Data 9', selected: false, total: '₹3728860' }, 
           ],
           expanded: false,
           selected: false
