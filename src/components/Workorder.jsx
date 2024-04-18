@@ -79,12 +79,25 @@ function Table() {
     setTableData(updatedTableData);
   };
 
-  const handleDataCheckboxChange = (packageIndex, itemIndex, dataIndex) => {
+ const handleDataCheckboxChange = (packageIndex, itemIndex, dataIndex) => {
     const updatedTableData = [...tableData];
     updatedTableData[packageIndex].content[itemIndex].data[dataIndex].selected = !updatedTableData[packageIndex].content[itemIndex].data[dataIndex].selected;
+  
+    const anyDataUnchecked = updatedTableData[packageIndex].content[itemIndex].data.some(data => !data.selected);
+    updatedTableData[packageIndex].content[itemIndex].selected = !anyDataUnchecked;
+  
+    let anyItemUnchecked = false;
+    updatedTableData[packageIndex].content.forEach(item => {
+      if (!item.selected) {
+        anyItemUnchecked = true;
+      }
+    });
+    updatedTableData[packageIndex].selected = !anyItemUnchecked;
+  
     setTableData(updatedTableData);
   };
-
+  
+  
   const handleCheckboxChange = (type, packageIndex, itemIndex = null) => {
     const updatedTableData = [...tableData];
     
@@ -99,11 +112,15 @@ function Table() {
       updatedTableData[packageIndex].content[itemIndex].selected = !updatedTableData[packageIndex].content[itemIndex].selected;
       updatedTableData[packageIndex].content[itemIndex].data.forEach(data => data.selected = updatedTableData[packageIndex].content[itemIndex].selected);
       updatedTableData[packageIndex].content[itemIndex].expanded = updatedTableData[packageIndex].content[itemIndex].selected;
+  
+      const allItemsUnchecked = updatedTableData[packageIndex].content.every(item => !item.selected);
+
+      updatedTableData[packageIndex].selected = !allItemsUnchecked;
     }
     
     setTableData(updatedTableData);
   };
-
+  
   const handleButtonClick = (show) => {
     setShowTable(show);
   };
